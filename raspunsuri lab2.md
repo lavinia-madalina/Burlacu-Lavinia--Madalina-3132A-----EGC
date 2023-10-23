@@ -12,14 +12,24 @@ Frames per second (cadre pe secundă) reprezintă numărul de imagini (cadre) ra
 
 3.Când este rulată metoda OnUpdateFrame()?
 Metoda `OnUpdateFrame()` este rulată în fiecare cadru (frame) al aplicației OpenGL, înainte de randarea scenei 3D. Această metodă este destinată logicii aplicației, cum ar fi actualizarea pozițiilor obiectelor sau gestionarea interacțiunilor cu utilizatorul.
+
+
 4.Ce este modul imediat de randare?
 Modul imediat de randare este o tehnică mai veche de randare în OpenGL în care desenarea se face direct într-o buclă de randare folosind funcții cum ar fi `GL.Begin()` și `GL.Vertex()`. Această abordare este considerată învechită și ineficientă în comparație cu tehnici mai moderne, precum randarea cu buffer.
+
+
 5.Care este ultima versiune de OpenGL care acceptă modul imediat?
 Ultima versiune de OpenGL care suportă modul imediat este OpenGL 3.0. După această versiune, modul imediat a fost eliminat și a fost introdus un nou model de randare, bazat pe buffer, care oferă performanțe mai bune.
+
+
 6.Când este rulată metoda OnRenderFrame()?
 Metoda `OnRenderFrame()` este rulată în fiecare cadru (frame) al aplicației OpenGL, imediat după ce metoda `OnUpdateFrame()` a fost apelată. Această metodă este destinată randării scenei 3D și afișării rezultatului pe ecran.
+
+
 7.De ce este nevoie ca metoda OnResize() să fie executată cel puțin o dată?
 Metoda `OnResize()` trebuie executată cel puțin o dată pentru a inițializa viewport-ul grafic și pentru a defini spațiul în care se va desfășura randarea scenei 3D. Aceasta trebuie să fie apelată la început, și ulterior ori de câte ori fereastra OpenGL este redimensionată pentru a asigura afișarea corectă a obiectelor pe ecran.
+
+
 8.Ce reprezintă parametrii metodei CreatePerspectiveFieldOfView() și care este domeniul de valori pentru aceștia?
 Metoda `CreatePerspectiveFieldOfView()` este folosită pentru a crea o matrice de proiecție într-o perspectivă în OpenGL. Parametrii acestei metode reprezintă:
 - `fieldOfView`: Este un unghi care specifică câmpul de vedere (FOV) în grade. Domeniul de valori este de obicei între 0 și 180 grade.
