@@ -36,3 +36,6 @@ Utilizarea culorilor diferite sau a gradientelor poate contribui la un aspect ma
 
 
 6.Un gradient de culoare reprezintă o tranziție graduală de la o culoare la alta, trecând printr-o gamă de nuanțe intermediare. Gradienții de culoare sunt folosiți în grafică pentru a crea efecte vizuale plăcute și pentru a oferi adâncime, textură și stil obiectelor. Aceste tranziții de culoare pot fi folosite pentru a umple forme geometrice, a evidenția suprafețe și a crea efecte de iluminare sau umbrire.În OpenGL, o bibliotecă de grafică 3D, un gradient de culoare poate fi obținut folosind culorile intermediare în shader-urile OpenGL sau prin folosirea funcției glShadeModel împreună cu glBegin și glEnd pentru a defini vârfurile primitivei și culorile asociate lor.
+
+
+7.Când desenați o linie sau un triunghi în modul strip (șir) în OpenGL și utilizați culori diferite pentru fiecare vârf (vertex), efectul este acela că culorile se interpolează sau se combină între vârfurile consecutive pentru a crea o tranziție de culoare fluidă. Acest lucru poate crea efecte vizuale interesante și poate fi folosit pentru a obține efecte de umbră, iluminare sau texturare pe obiectele 3D.
