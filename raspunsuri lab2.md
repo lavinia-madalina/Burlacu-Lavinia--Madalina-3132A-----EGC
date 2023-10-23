@@ -1,9 +1,15 @@
 1.Modificați valoarea constantei „MatrixMode.Projection”. Ce observați?
 Aceste valori vor defini cum sunt proiectate obiectele pe ecran astfel ca daca GL.Ortho(-1.0, 15.0, -1.0, 1.0, 0.0, 4.0) are valorile anterioare obiectul nostru va fi plasat in partea stanga a ecranului
+
+
 1.Ce este un viewport?
 Un viewport reprezintă o regiune a ecranului sau a ferestrei de afișare în care este randată grafica. Acesta definește coordonatele și dimensiunile în care se va afișa scena 3D. Un viewport permite să se controleze cum și unde sunt randate obiectele în fereastra de afișare.
+
+
 2.Ce reprezintă conceptul de frames per second (FPS) din punctul de vedere al bibliotecii OpenGL?
 Frames per second (cadre pe secundă) reprezintă numărul de imagini (cadre) randate și afișate pe ecran în fiecare secundă. În contextul OpenGL, este un indicator al performanței aplicației și arată cât de eficientă este randarea grafică. Cu cât numărul FPS este mai mare, cu atât aplicația este mai fluidă și mai reactivă.
+
+
 3.Când este rulată metoda OnUpdateFrame()?
 Metoda `OnUpdateFrame()` este rulată în fiecare cadru (frame) al aplicației OpenGL, înainte de randarea scenei 3D. Această metodă este destinată logicii aplicației, cum ar fi actualizarea pozițiilor obiectelor sau gestionarea interacțiunilor cu utilizatorul.
 4.Ce este modul imediat de randare?
