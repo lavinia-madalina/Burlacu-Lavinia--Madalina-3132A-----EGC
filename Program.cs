@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
@@ -14,6 +12,10 @@ namespace ConsoleApp2
         private float objectX = 0.0f;
         private float objectY = 0.0f;
 
+        private Color vertexColor1 = Color.MidnightBlue;
+        private Color vertexColor2 = Color.SpringGreen;
+        private Color vertexColor3 = Color.Ivory;
+
         public SimpleWindow() : base(800, 600)
         {
             KeyDown += Keyboard_KeyDown;
@@ -22,10 +24,33 @@ namespace ConsoleApp2
 
         void Keyboard_KeyDown(object sender, KeyboardKeyEventArgs e)
         {
+            if (e.Key == Key.Up)
+                objectY += 0.1f;
+            if (e.Key == Key.Down)
+                objectY -= 0.1f;
             if (e.Key == Key.Left)
                 objectX -= 0.1f;
             else if (e.Key == Key.Right)
                 objectX += 0.1f;
+            else if (e.Key == Key.R)
+            {
+                // Modifică culoarea primului vertex la roșu
+                vertexColor1 = Color.Red;
+            }
+            else if (e.Key == Key.G)
+            {
+                // Modifică culoarea celui de-al doilea vertex la verde
+                vertexColor2 = Color.Green;
+            }
+            else if (e.Key == Key.B)
+            {
+                // Modifică culoarea celui de-al treilea vertex la albastru
+                vertexColor3 = Color.Blue;
+            }
+            Console.WriteLine($"Vertex 1: R={vertexColor1.R}, G={vertexColor1.G}, B={vertexColor1.B}");
+            Console.WriteLine($"Vertex 2: R={vertexColor2.R}, G={vertexColor2.G}, B={vertexColor2.B}");
+            Console.WriteLine($"Vertex 3: R={vertexColor3.R}, G={vertexColor3.G}, B={vertexColor3.B}\n");
+
         }
 
         void Mouse_Move(object sender, MouseMoveEventArgs e)
@@ -36,7 +61,7 @@ namespace ConsoleApp2
 
         protected override void OnLoad(EventArgs e)
         {
-            GL.ClearColor(Color.MidnightBlue);
+            GL.ClearColor(Color.Black);
         }
 
         protected override void OnResize(EventArgs e)
@@ -50,8 +75,6 @@ namespace ConsoleApp2
 
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
-            // Control obiect prin taste
-            // Momentan aplicația nu face nimic în această secțiune!
         }
 
         protected override void OnRenderFrame(FrameEventArgs e)
@@ -64,11 +87,13 @@ namespace ConsoleApp2
 
             GL.Begin(PrimitiveType.Triangles);
 
-            GL.Color3(Color.MidnightBlue);
+            GL.Color3(vertexColor1);
             GL.Vertex2(-1.0f, 1.0f);
-            GL.Color3(Color.SpringGreen);
+
+            GL.Color3(vertexColor2);
             GL.Vertex2(0.0f, -1.0f);
-            GL.Color3(Color.Ivory);
+
+            GL.Color3(vertexColor3);
             GL.Vertex2(1.0f, 1.0f);
 
             GL.End();
