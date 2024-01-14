@@ -1,0 +1,32 @@
+Răspundeți la următoarele întrebări:
+o Utilizați pentru texturare imagini cu transparență și fără. Ce observați?
+o Ce formate de imagine pot fi aplicate în procesul de texturare în
+OpenGL?
+o Specificați ce se întâmplă atunci când se modifică culoarea (prin
+manipularea canalelor RGB) obiectului texturat.
+o Ce deosebiri există între scena ce utilizează obiecte texturate în modul
+iluminare activat, respectiv dezactivat?
+
+
+1.Utilizați pentru texturare imagini cu transparență și fără. Ce observați?
+Atunci când textura utilizată în OpenGL are transparență (canalul alpha), aceasta poate afecta modul în care se întrepătrunde sau se amestecă obiectele texturate. Transparența poate permite vizualizarea parțială a obiectelor din spate.
+
+2.Ce formate de imagine pot fi aplicate în procesul de texturare în OpenGL?
+OpenGL acceptă o varietate de formate de imagine pentru texturare, inclusiv:
+RGB: Red, Green, Blue
+RGBA: Red, Green, Blue, Alpha (pentru transparență)
+Luminance: O singură componentă de culoare (de obicei pentru texturi alb-negru)
+Luminance Alpha: O singură componentă de culoare și un canal alfa
+S3TC/DXT: Comprimat pentru performanță și eficiență de stocare.
+
+3.Specificați ce se întâmplă atunci când se modifică culoarea (prin manipularea canalelor RGB) obiectului texturat.
+Modificarea canalelor RGB ale obiectului texturat va afecta culoarea acestuia în conformitate cu noile valori ale canalelor. De exemplu, dacă schimbați canalul roșu la 1 și celelalte la 0, obiectul va deveni roșu intens, în timp ce celelalte culori se vor atenua.
+
+4.Ce deosebiri există între scena ce utilizează obiecte texturate în modul iluminare activat, respectiv dezactivat?
+
+Modul Iluminare Activat:
+Texturile vor reacționa la iluminare, evidențiind detaliile și adăugând umbre în funcție de orientarea față de lumină.
+Este posibil să observați reflexii și umbre pe texturi în funcție de modul de iluminare folosit (de exemplu, Gouraud sau Phong).
+Modul Iluminare Dezactivat:
+Texturile vor fi afișate în mod uniform, indiferent de direcția sau intensitatea luminii.
+Detaliile iluminării nu vor fi luate în considerare, și obiectele vor părea mai plate.
